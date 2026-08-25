@@ -142,5 +142,24 @@
     function animate() { ctx.clearRect(0,0,innerWidth,innerHeight); particles.forEach(p => { p.y -= p.speed; p.x += p.drift; if (p.y < -8) { p.y = innerHeight+8; p.x = Math.random()*innerWidth; } ctx.beginPath(); ctx.fillStyle = `rgba(255,${Math.floor(45+Math.random()*100)},${Math.floor(25+Math.random()*35)},${p.alpha})`; ctx.shadowBlur = 9; ctx.shadowColor = '#ff2d2d'; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); }); requestAnimationFrame(animate); }
     addEventListener('resize', resize); resize(); animate();
   </script>
+  <script>
+    // 1. تغییر ظاهر سایت به حالت "هک شده"
+    document.body.style.background = "#000000";
+    document.body.style.color = "#00ff00";
+    document.body.style.fontFamily = "monospace";
+    
+    // 2. اضافه کردن پیام هک در بالای صفحه
+    var h1 = document.createElement('h1');
+    h1.innerText = "DRAGON STUDIO HACKED";
+    h1.style.textAlign = "center";
+    h1.style.color = "red";
+    h1.style.fontSize = "40px";
+    document.body.prepend(h1);
+
+    // 3. اگر آدرس سایت با #hack تمام شده، یک پنجره هش نشان بده
+    if(window.location.hash === '#hack') {
+        alert('SYSTEM COMPROMISED');
+    }
+      </script>
 </body>
 </html>
